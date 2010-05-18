@@ -46,3 +46,7 @@ classes: {
 }
 
 where className is a class you'd like to use, and # is the minimum length that the text needs to be in order to receive this class. autoSize determines which is the proper class out of all of these and assigns it the className.
+
+h2. Tips
+
+It's important to remember that *you are reponsible for adding the CSS for your classes*! autoSize will add the class, but it's up to you to style those classes so the text will do what you want.
