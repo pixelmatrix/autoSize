@@ -1,0 +1,48 @@
+h1. autoSize
+
+*Basic idea:* You've got text that needs to fit within certain bounds. You design it to look a certain way, but what if it's too long? What if it's too short? autoSize lets you set up classes so you can control the size at all times.
+
+h2. Practical uses
+
+*Blog posts:* You've got a 10 word post and a 500 word post. use autoSize to set up a class for each, and style them appropriately (making the short post with a large font, and the 500 word post with a small font).
+
+*Tablular Content:* You have 50px of space, and the content could be 5 characters or 10 characters. Add classes for each situation, and style them so that no matter what, the content will fit, and look great for each.
+
+*Text in boxes:* You have a box, and you need the text to fit inside the box. Set up your classes, and style them appropriately.
+
+h2. Usage
+
+Call this plugin within a document.ready or $(function(){…}); wrapper:
+
+$(…).autoSize();
+
+OR specify your own classes:
+
+$(…).autoSize({classes: {small: 0, medium: 20, large: 40}});
+
+It may be easier for you to set up your classes in a variable so you can reuse them:
+
+var myClasses = {small: 0, medium: 20, large: 40};
+$(obj1).autoSize({classes: myClasses});
+$(obj2).autoSize({classes: myClasses});
+$(obj3).autoSize({classes: myClasses});
+
+You can call autoSize() again at any time to update the class, even with different class names. Make sure you include the original classes if you're using custom ones. autoSize won't remember your class declarations if you call it again.
+
+h2. Options
+
+There's only one option currently: classes (object).
+
+h3. classes(object)
+
+classes is a javascript object with key value pairs. You can set any class that you desire for any length.
+
+Example:
+
+classes: {
+  className: #,
+  className: #,
+  className: #
+}
+
+where className is a class you'd like to use, and # is the minimum length that the text needs to be in order to receive this class. autoSize determines which is the proper class out of all of these and assigns it the className.

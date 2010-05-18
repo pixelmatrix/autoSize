@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jquery.autoSize.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(function(){
+      $("#test").autoSize();
+      $("#update").click(function(){
+        $("#test").autoSize();
+      });
+    });
+  </script>
+  <div id="test" contentEditable>Type some text here</div>
+  <button id="update">Update</button>
+</html>
