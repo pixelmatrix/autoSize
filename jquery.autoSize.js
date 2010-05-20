@@ -31,17 +31,6 @@
                     medium: 1000,
                     large: 3000
                   }
-        },
-        toArray = function (obj) {
-          var key, result = [];
-
-          for(key in obj) {
-            if(obj.hasOwnProperty(key)) {
-              result[key] = obj[key];
-            }
-          }
-
-          return result;
         };
 
     return function (options) {
