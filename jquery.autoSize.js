@@ -44,17 +44,17 @@
             classes = o.classes, mapping = [], temp;
 
         for(cls in classes) {
-          if (classes.hasOwnProperty(cls)) {
-            temp = classes[cls];
+          if (classes.hasOwnProperty(cls)) { // Exclude properties and methods inherited from prototype
+            temp = classes[cls]; // cache the current class's length
             if(len >= temp) {
-              mapping[temp] = cls
+              mapping[temp] = cls // store the matched class indexed by the related length
             }
-            classnames.push(cls);
+            classnames.push(cls); // populate the array with all defined class names
           }
         }
 
-        match = mapping.sort().shift();
-        classnames = classnames.join(' ');
+        match = mapping.sort().shift(); // sort the matched classes in ascending order of length and get the last (max) class name
+        classnames = classnames.join(' '); // combine the defined class names
 
         $this.removeClass(classnames).addClass(match);
       });
